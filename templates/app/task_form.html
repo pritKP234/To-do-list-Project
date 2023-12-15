@@ -1,0 +1,21 @@
+{% extends 'app/dummy.html' %}
+
+{% block title %}
+    <title>Create</title>
+{% endblock %}
+
+{% block body_block %}
+<div class="header-bar">
+    <a href="{% url 'TaskList' %}">&#8592; Back</a>
+</div>
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+
+        {{form.as_p}}
+
+        <input class="btn btn-primary" type="submit" value="Add">
+    </form>
+</div>
+{% endblock %}
